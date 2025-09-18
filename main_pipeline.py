@@ -6,7 +6,9 @@ from summarizer import generate_all_reports
 
 def run_complete_pipeline():
     logs = fetch_logs_with_retry()
-    parsed_logs = parse_logs(logs)
+    parsed_logs, parsed_errors = parse_logs(logs)
+    print(f"Parsed {parsed_logs}")
+          
     classified_logs = classify_logs(parsed_logs)
     create_database()
     save_classified_logs_to_database(classified_logs)

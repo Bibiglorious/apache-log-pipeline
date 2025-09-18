@@ -28,3 +28,5 @@ def classify_logs(parsed_logs):
     print(f"Success: {success_count}, Error: {error_count}, Unknown: {unknown_count}")
 
     return classified_logs
+
+classify_logs(parsed_logs)
